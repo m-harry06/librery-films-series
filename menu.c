@@ -2,14 +2,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "menu.h"
+#include "auth.h"
 
-typedef struct personne {
-    char nom[50];
-    char prenom[50];
-    char nomutilisateur[20];
-    char password[20];
-    int age;
-} personne;
+
 
 /**
 *affiche le menu de la page acceuil
@@ -47,6 +42,7 @@ void gerer_menu_acceuil(int choix){
 
 void contact_admin_menu(){
 
+    
 
 }
 
@@ -54,6 +50,7 @@ void enregistrer_menu() {
     personne user;
     char ch;
     int i = 0;  // Initialisez i à 0 avant de l'utiliser
+
 
     printf("-----------------------------------------------------------------------------\n");
     printf("\t\t Nouvel utilisateur \n");
@@ -66,6 +63,8 @@ void enregistrer_menu() {
     fgets(user.prenom, 50, stdin);
     printf("Entrer votre nom d'utilisateur *il est unique a chaque utilisateur: ");
     fgets(user.nomutilisateur, 20, stdin);
+
+    
     printf("Entrer votre mot de passe: ");
 
     while ((ch = getch()) != '\r') {
@@ -83,6 +82,8 @@ void enregistrer_menu() {
 
     printf ("\n");
 
+    
+
     printf("Quel est votre age ? ");
     scanf("%d", &user.age);
 
@@ -93,16 +94,56 @@ void enregistrer_menu() {
     printf("Mot de passe: %s \n", user.password);  // À des fins de démonstration seulement. NE PAS FAIRE pour des mots de passe réels.
     printf("Age: %d\n", user.age);
 
-    int choix = 0;
-    while (choix != 1)
-    {
-        printf("taper 1 pour revenir au menu principal: ");
-        scanf("%d", &choix);
+}
+
+
+void connecter_menu(){
+    
+    char nom[20];
+    char pwd[20];
+    char ch;
+    int i = 0;
+
+    printf("-----------------------------------------------------------------------------\n");
+    printf("\t\t connectez vous a votre espace personel \n");
+    printf("-----------------------------------------------------------------------------\n");
+    printf(" \t entrer votre nom d'utilisateurs: ");
+    fgets(nom, 20, stdin);
+    fgets(nom, 20, stdin);
+    printf(" \t entrer votre mot de passe: ");
+
+    while ((ch = getch()) != '\r') {
+
+        if(ch != '\b'){
+        pwd[i] = ch;
+        printf(".");
+        i++;
+        }else{
+            printf("\b \b");
+            i--;
+        }
     }
+    pwd[i] = '\0';
+
+    printf("\n");
+    
+
+
+
+}
+
+void preference_preference(){
+    
+    printf("-----------------------------------------------------------------------------\n");
+    printf("\t\t Que desirer vous aujourd'hui??? \n");
+    printf("-----------------------------------------------------------------------------\n");
+    printf(" faites votre choix \n");
+    printf (" \n \t \t |1.livres \n \t \t |2.Films et series \n \t \t |3.Livres et films \n");
     
 }
 
-void connecter_menu(){
+
+void gerer_prefernce( int preference){
 
 
 }
