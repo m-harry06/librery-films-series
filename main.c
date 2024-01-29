@@ -5,8 +5,6 @@
 int main(){
 
     int user_choice_acceuil;
-
-    debut:
     
     menu_acceuil(); // on appelle et on execute la fonction munu acceuil pour afficher le menu
     printf(" \t votre choix: ");
