@@ -11,10 +11,12 @@ int main(){
     printf(" \t votre choix: ");
     scanf("%d", &user_choice_acceuil);
     gerer_menu_acceuil(user_choice_acceuil);
+    system("cls");
     preference_preference();
     printf(" \t votre choix: ");
     scanf("%d", &prefernce_user);
     gerer_prefernce(prefernce_user);
+    system("cls");
 
     return 0;
 }
