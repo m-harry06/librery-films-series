@@ -144,6 +144,20 @@ void preference_preference(){
 
 
 void gerer_prefernce( int preference){
+    switch (preference){
+        case 1:
+            printf(" \t \t bienvenue dans notre bibliotheque de livres ");
+            break;
+        case 2:
+            printf(" \t \t bienveniue dans notre bibliotheque de series et de films \n \t films \n \n \n \n \n \t series \n");
+            break;
+        case 3:
+            contact_admin_menu();
+            break;
+        default:
+            preference_preference();
+            break;
+    }
 
 
 }
