@@ -12,6 +12,8 @@
 
 void menu_acceuil(){
 
+    system("cls");
+
     printf("-----------------------------------------------------------------------------\n");
 
     printf (" \t \t \t ** Bienvenue chez stocke-Films&livres ** \n");
@@ -42,11 +44,28 @@ void gerer_menu_acceuil(int choix){
 
 void contact_admin_menu(){
 
-    
+    system("cls");
+
+    printf("-----------------------------------------------------------------------------\n");
+    printf("\t\t Contacter un administrateur \n");
+    printf("-----------------------------------------------------------------------------\n");
+
+    printf(" \t Harry MBENGMO \n \t \t Tel: +237 6 96 56 46 38 \n \t \t mail: hmbengmo@gmail.com \n");
+
+
+    int b, y = 0;
+    do{
+        printf(" entrer 1 pour revenir au menu principal ");
+        scanf("%d", &b);
+        y++;
+    }while( b != 1);
 
 }
 
 void enregistrer_menu() {
+
+    system("cls");
+
     personne user;
     char ch;
     int i = 0;  // Initialisez i à 0 avant de l'utiliser
@@ -94,10 +113,21 @@ void enregistrer_menu() {
     printf("Mot de passe: %s \n", user.password);  // À des fins de démonstration seulement. NE PAS FAIRE pour des mots de passe réels.
     printf("Age: %d\n", user.age);
 
+    int a, x = 0;
+    do{
+        printf(" entrer 1 pour revenir au menu principal ");
+        scanf("%d", &a);
+        x++;
+    }while( a != 1);
+
+    
+
 }
 
 
 void connecter_menu(){
+
+    system("cls");
     
     char nom[20];
     char pwd[20];
@@ -132,7 +162,9 @@ void connecter_menu(){
 
 }
 
-void preference_preference(){
+void menu_preference(){
+
+    system("cls");
     
     printf("-----------------------------------------------------------------------------\n");
     printf("\t\t Que desirer vous aujourd'hui??? \n");
@@ -143,21 +175,19 @@ void preference_preference(){
 }
 
 
-void gerer_prefernce( int preference){
-    switch (preference){
+void gerer_preference(int preference) {
+    switch (preference) {
         case 1:
-            printf(" \t \t bienvenue dans notre bibliotheque de livres ");
+            printf("\n\t\tBienvenue dans notre bibliothèque de livres\n");
             break;
         case 2:
-            printf(" \t \t bienveniue dans notre bibliotheque de series et de films \n \t films \n \n \n \n \n \t series \n");
+            printf("\n\t\tBienvenue dans notre bibliotheque de films et series\n");
             break;
         case 3:
             contact_admin_menu();
             break;
         default:
-            preference_preference();
+            menu_preference();
             break;
     }
-
-
 }
